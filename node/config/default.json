@@ -1,6 +1,6 @@
 {
-    "appSecret": "",
-    "pageAccessToken": "",
-    "validationToken": "",
-    "serverURL": ""
+    "appSecret": "40caab74f0b0cab1adae8e420204e6d8",
+    "pageAccessToken": "EAABq8mkoVXMBAOSWXNNohdQarZAE9VGuOh6BDqVTdLFgCYrAZB070ahPGSVbrNB9dCJWVoZAIZCLmDz9tDDxp59EFr4ZAFxCJ6vbNKdAqETj2Ht5lhTS4T63mhXBAFDJK86GBTfVDxQ022GFGhKuUyIvgwEqA96lZClZBLOhuWZCaNRtsnNv8abY",
+    "validationToken": "12345678",
+    "serverURL": "https://jdfbbot.herokuapp.com/"
 }
