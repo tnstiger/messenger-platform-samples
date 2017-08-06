@@ -872,7 +872,7 @@ function addPersistentMenu(){
       ]
     },
     {
-      "locale":"zh_CN",
+      "locale":"default",
       "composer_input_disabled":false
     }
     ]
