@@ -864,15 +864,41 @@ function addPersistentMenu(){
       "composer_input_disabled":true,
       "call_to_actions":[
         {
+          "title":"Home",
+          "type":"postback",
+          "payload":"HOME"
+        },
+        {
+          "title":"Nested Menu Example",
+          "type":"nested",
+          "call_to_actions":[
+            {
+              "title":"Who am I",
+              "type":"postback",
+              "payload":"WHO"
+            },
+            {
+              "title":"Joke",
+              "type":"postback",
+              "payload":"joke"
+            },
+            {
+              "title":"Contact Info",
+              "type":"postback",
+              "payload":"CONTACT"
+            }
+          ]
+        },
+        {
           "type":"web_url",
-          "title":"Home Page",
-          "url":"https://emq.pre-stage.club/",
+          "title":"Latest News",
+          "url":"http://foxnews.com",
           "webview_height_ratio":"full"
         }
       ]
     },
     {
-      "locale":"default",
+      "locale":"zh_CN",
       "composer_input_disabled":false
     }
     ]
