@@ -864,35 +864,15 @@ function addPersistentMenu(){
       "composer_input_disabled":true,
       "call_to_actions":[
         {
-          "title":"Home",
-          "type":"postback",
-          "payload":"HOME"
-        },
-        {
-          "title":"Nested Menu Example",
-          "type":"nested",
-          "call_to_actions":[
-            {
-              "title":"Who am I",
-              "type":"postback",
-              "payload":"WHO"
-            },
-            {
-              "title":"Joke",
-              "type":"postback",
-              "payload":"joke"
-            },
-            {
-              "title":"Contact Info",
-              "type":"postback",
-              "payload":"CONTACT"
-            }
-          ]
+          "type":"web_url",
+          "title":"Send someone moeny",
+          "url":"https://emq.pre-stage.club/",
+          "webview_height_ratio":"full"
         },
         {
           "type":"web_url",
-          "title":"Latest News",
-          "url":"http://foxnews.com",
+          "title":"Request money from someone",
+          "url":"https://emq.pre-stage.club/",
           "webview_height_ratio":"full"
         }
       ]
