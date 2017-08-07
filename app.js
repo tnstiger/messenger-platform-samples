@@ -886,6 +886,8 @@ function addPersistentMenu(){
 
 }, function(error, response, body) {
     console.log(response)
+    console.log(token)
+    console.log(PAGE_ACCESS_TOKEN)
     if (error) {
         console.log('Error sending messages: ', error)
     } else if (response.body.error) {
