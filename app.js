@@ -866,28 +866,22 @@ function addPersistentMenu(){
         {
           "type":"web_url",
           "title":"Send someone moeny",
-          "url":"https://emq.pre-stage.club/",
+          "url":"https://emq.pre-stage.club/RequestRecipient_DataSender",
           "webview_height_ratio":"full"
         },
         {
           "type":"web_url",
           "title":"Request money from someone",
-          "url":"https://emq.pre-stage.club/",
+          "url":"https://emq.pre-stage.club/RequestMoney_Calculator",
           "webview_height_ratio":"full"
         }
       ]
-    },
-    {
-      "locale":"zh_CN",
-      "composer_input_disabled":false
     }
     ]
     }
 
 }, function(error, response, body) {
     console.log(response)
-    console.log('token')
-    console.log(PAGE_ACCESS_TOKEN)
     if (error) {
         console.log('Error sending messages: ', error)
     } else if (response.body.error) {
