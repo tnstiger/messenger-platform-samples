@@ -865,14 +865,14 @@ function addPersistentMenu(){
       "call_to_actions":[
         {
           "type":"web_url",
-          "title":"Send someone moeny",
+          "title":"Send someone moeny2",
           "url":"https://emq.pre-stage.club/RequestRecipient_DataSender",
           "webview_height_ratio":"tall",
           "messenger_extensions":false
         },
         {
           "type":"web_url",
-          "title":"Request money from someone",
+          "title":"Request money from someone2",
           "url":"https://emq.pre-stage.club/RequestMoney_Calculator",
           "webview_height_ratio":"tall",
           "messenger_extensions":false
