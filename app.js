@@ -874,7 +874,7 @@ function addPersistentMenu(){
           "type":"web_url",
           "title":"Request money from someone",
           "url":"https://emq.pre-stage.club/RequestMoney_Calculator",
-          "webview_height_ratio":"tall"
+          "webview_height_ratio":"tall",
           "messenger_extensions":false
         }
       ]
