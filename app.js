@@ -867,13 +867,15 @@ function addPersistentMenu(){
           "type":"web_url",
           "title":"Send someone moeny",
           "url":"https://emq.pre-stage.club/RequestRecipient_DataSender",
-          "webview_height_ratio":"full"
+          "webview_height_ratio":"tall",
+          "messenger_extensions":false
         },
         {
           "type":"web_url",
           "title":"Request money from someone",
           "url":"https://emq.pre-stage.club/RequestMoney_Calculator",
-          "webview_height_ratio":"full"
+          "webview_height_ratio":"tall"
+          "messenger_extensions":false
         }
       ]
     }
