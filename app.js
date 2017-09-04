@@ -82,8 +82,8 @@ app.get('/webhook', function(req, res) {
  */
  app.get('/setup',function(req,res){
 
-     setupGetStartedButton(res);
-
+    //  setupGetStartedButton(res);
+     addPersistentMenu();
  });
 
 app.post('/webhook', function (req, res) {
@@ -940,7 +940,6 @@ function setupGetStartedButton(res){
      function (error, response, body) {
          if (!error && response.statusCode == 200) {
              // Print out the response body
-             addPersistentMenu();
              res.send(body);
 
          } else {
