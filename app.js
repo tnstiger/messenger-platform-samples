@@ -861,18 +861,20 @@ function addPersistentMenu(){
 "persistent_menu":[
     {
       "locale":"default",
-      "composer_input_disabled":true,
+      "composer_input_disabled":false,
+      "messenger_extensions":true,
+      "webview_share_button":false,
       "call_to_actions":[
         {
           "type":"web_url",
-          "title":"Send someone moeny2",
+          "title":"Send someone money",
           "url":"https://emq.pre-stage.club/RequestRecipient_DataSender",
           "webview_height_ratio":"tall",
           "messenger_extensions":false
         },
         {
           "type":"web_url",
-          "title":"Request money from someone2",
+          "title":"Request money from someone",
           "url":"https://emq.pre-stage.club/RequestMoney_Calculator",
           "webview_height_ratio":"tall",
           "messenger_extensions":false

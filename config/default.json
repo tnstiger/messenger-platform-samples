@@ -1,6 +1,6 @@
 {
-    "appSecret": "40caab74f0b0cab1adae8e420204e6d8",
-    "pageAccessToken": "EAABq8mkoVXMBAOSWXNNohdQarZAE9VGuOh6BDqVTdLFgCYrAZB070ahPGSVbrNB9dCJWVoZAIZCLmDz9tDDxp59EFr4ZAFxCJ6vbNKdAqETj2Ht5lhTS4T63mhXBAFDJK86GBTfVDxQ022GFGhKuUyIvgwEqA96lZClZBLOhuWZCaNRtsnNv8abY",
+    "appSecret": "19f145d4cfb39eef8c7e0561818343df",
+    "pageAccessToken": "EAAO5PZAaoYmMBAPssogQKZA5yrbcnlzOL7XZAjMyqr6XsxGd6ZCYAKIbBblN12Y7sMhysjZCcENbZCbxl4vpbvwTRcN63vvmRZBKcN5BrUIxwcFZAXmw29BUdvEnJTXFn8CQePpDNnPIpbGrZBIVerTmN0AG4hx6xrWuoqhincgvZCeJ6XGNDRAqC6",
     "validationToken": "12345678",
-    "serverURL": "https://jdfbbot.herokuapp.com/"
+    "serverURL": "https://emq-test.herokuapp.com/"
 }
