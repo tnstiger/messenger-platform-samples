@@ -151,9 +151,12 @@ app.get('/authorize', function(req, res) {
 // https://www.imagemagick.org/script/index.php
 app.get('/imageMake', function (req, res) {
     var string = req.query.string
+    var resobj = {}
     fs.stat(`./imageMakeSrc/images/${string}.jpg`, function(err, stat){
+      // 如果有檔案
       if(err == null){
-        res.send({'imgUrl':`/${string}.jpg`})
+        resobj.imgUrl = `${string}.jpg`
+        res.json(resobj)
       }
       else {
         exec("convert ./imageMakeSrc/123.png -size 1000x300  xc:none -font ./imageMakeSrc/OpenSans-Bold.ttf -pointsize 90 \
@@ -161,11 +164,16 @@ app.get('/imageMake', function (req, res) {
                \\( +clone -background black -shadow 70x2+4+4 \\) +swap \
               -flatten  -trim +repage  "+ `'./imageMakeSrc/images/${string}'` +".jpg", function(error, stdout, stderr) {
             if (error !== null) {
-                console.log('exec error: ' + error)
+                res.status(500)
+                resobj.error = 'create picture fail'
             }
-            res.send({'imgUrl':`/${string}.jpg`})
+            else {
+              resobj.imgUrl = `${string}.jpg`
+            }
+            res.json(resobj)
         })
       }
+
     })
   })
 
