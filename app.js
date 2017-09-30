@@ -16,8 +16,9 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),
-  request = require('request');
-
+  request = require('request'),
+  exec = require('child_process').exec,
+  fs = require('fs');
 var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
@@ -141,6 +142,32 @@ app.get('/authorize', function(req, res) {
     redirectURISuccess: redirectURISuccess
   });
 });
+
+
+
+// imageMake api used to add text on the picture
+// the server have to install 'imagemagic' package,
+// this api will call command to exec instruction（imagemagic）
+// https://www.imagemagick.org/script/index.php
+app.get('/imageMake', function (req, res) {
+    var string = req.query.string
+    fs.stat(`./imageMakeSrc/images/${string}.jpg`, function(err, stat){
+      if(err == null){
+        res.send({'imgUrl':`/${string}.jpg`})
+      }
+      else {
+        exec("convert ./imageMakeSrc/123.png -size 1000x300  xc:none -font ./imageMakeSrc/OpenSans-Bold.ttf -pointsize 90 \
+               -fill white  -annotate +35+95 " + `'${string}'` + " \
+               \\( +clone -background black -shadow 70x2+4+4 \\) +swap \
+              -flatten  -trim +repage  "+ `'./imageMakeSrc/images/${string}'` +".jpg", function(error, stdout, stderr) {
+            if (error !== null) {
+                console.log('exec error: ' + error)
+            }
+            res.send({'imgUrl':`/${string}.jpg`})
+        })
+      }
+    })
+  })
 
 /*
  * Verify that the callback came from Facebook. Using the App Secret from
