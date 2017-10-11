@@ -145,10 +145,10 @@ app.get('/authorize', function(req, res) {
 
 
 
-// imageMake api used to add text on the picture
-// the server have to install 'imagemagic' package,
-// this api will call command to exec instruction（imagemagic）
-// https://www.imagemagick.org/script/index.php
+// imageMake api be used to add text on the picture.
+// the server have to install 'imagemagic' package and also npm.
+// this api will call command to exec instruction（imagemagic）.
+// imagemagick url: https://www.imagemagick.org/script/index.php
   var im = require('imagemagick');
   app.get('/imageMake', function (req, res) {
       var string = req.query.string
