@@ -1,11 +1,11 @@
 # Messenger Platform Sample -- node.js
 
-This project is an example server for Messenger Platform built in Node.js. With this app, you can send it messages and it will echo them back to you. You can also see examples of the different types of Structured Messages. 
+This project is an example server for Messenger Platform built in Node.js. With this app, you can send it messages and it will echo them back to you. You can also see examples of the different types of Structured Messages.
 
 It contains the following functionality:
 
 * Webhook (specifically for Messenger Platform events)
-* Send API 
+* Send API
 * Web Plugins
 * Messenger Platform v1.1 features
 
@@ -30,6 +30,14 @@ All webhook code is in `app.js`. It is routed to `/webhook`. This project handle
 ## "Send to Messenger" and "Message Us" Plugin
 
 An example of the "Send to Messenger" plugin and "Message Us" plugin are located at `index.html`. The "Send to Messenger" plugin can be used to trigger an authentication event. More details are available at the [reference docs](https://developers.facebook.com/docs/messenger-platform/plugin-reference).
+
+## Environment Setup
+
+1. sudo apt-get install
+2. sudo apt install imagemagick  
+3. sudo apt install nodejs-legacy
+4. sudo apt install npm
+5. pm2 start app.js 
 
 ## License
 
