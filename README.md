@@ -5,4 +5,4 @@
 3. sudo apt install nodejs-legacy
 4. sudo apt install npm
 5. sudo npm install pm2 -g
-6. pm2 start app.js 
+6. sudo pm2 kill && sudo pm2 start app.js 
