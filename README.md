@@ -1,6 +1,6 @@
 ## Environment Setup
 
-1. sudo apt-get install
+1. sudo apt-get install
 2. sudo apt install imagemagick  
 3. sudo apt install nodejs-legacy
 4. sudo apt install npm
