@@ -145,40 +145,25 @@ app.get('/authorize', function(req, res) {
 
 
 
-// imageMake api used to add text on the picture
-// the server have to install 'imagemagic' package,
-// this api will call command to exec instruction（imagemagic）
-// https://www.imagemagick.org/script/index.php
-app.use('/imageMakeSrc/images/', express.static(__dirname + '/imageMakeSrc/images/'))
-app.get('/imageMake', function (req, res) {
-    var string = req.query.string
-    var resobj = {}
-    fs.stat(`./imageMakeSrc/images/${string}.jpg`, function(err, stat){
-      // 如果有檔案
-      if(err == null){
-        resobj.imgUrl = `${string}.jpg`
-        res.json(resobj)
-      }
-      else {
-        exec("convert ./imageMakeSrc/123.png -size 1000x300  xc:none -font ./imageMakeSrc/OpenSans-Bold.ttf -pointsize 90 \
-               -fill white  -annotate +35+95 " + `'${string}'` + " \
-               \\( +clone -background black -shadow 70x2+4+4 \\) +swap \
-              -flatten  -trim +repage  "+ `'./imageMakeSrc/images/${string}'` +".jpg", function(error, stdout, stderr) {
-            if (error !== null) {
-                res.status(500)
-                resobj.error = 'create picture fail'
+// imageMake api be used to add text on the picture.
+// the server have to install 'imagemagic' package and also npm.
+// this api will call command to exec instruction（imagemagic）.
+// imagemagick url: https://www.imagemagick.org/script/index.php
+  var im = require('imagemagick');
+  app.get('/imageMake', function (req, res) {
+      var string = req.query.string
+      fs.stat(`./imageMakeSrc/images/${string}.jpg`, function(err, stat){
+          im.convert(['./imageMakeSrc/123.png', '-size', '1000x300','xc:none','-font','./imageMakeSrc/OpenSans-Bold.ttf','-pointsize','90',
+          '-fill','white','-annotate','+35+95',string,'(','+clone','-background','black','-shadow','70x2+4+4',')',
+          '+swap','-flatten','-trim','+repage','jpg:-'],
+          function(err, stdout){
+            if (err) {
+              throw err + 'Please check the host has already installed "imagemagick" package'
             }
-            else {
-              resobj.imgUrl = `${string}.jpg`
-            }
-            res.set('Content-Type', 'image/jpeg');
-            res.json({url:`/imageMakeSrc/images/${string}.jpg`})
-            // res.render()
-        })
-      }
-
+            res.end(stdout,'binary')
+          })
+      })
     })
-  })
 
 /*
  * Verify that the callback came from Facebook. Using the App Secret from
