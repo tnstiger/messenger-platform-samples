@@ -1,4 +1,6 @@
 ## Environment Setup
+
+
 1. sudo apt-get update
 2. curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 3. sudo apt-get install -y imagemagick git nodejs npm
